@@ -27,20 +27,20 @@ public class Options extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        restaurantButton = new javax.swing.JButton();
-        restaurantButton1 = new javax.swing.JButton();
+        updateButton = new javax.swing.JButton();
+        addButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(153, 107, 66));
 
-        restaurantButton.setBackground(new java.awt.Color(153, 107, 66));
-        restaurantButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        restaurantButton.setForeground(new java.awt.Color(255, 255, 255));
-        restaurantButton.setText("Actualizar");
+        updateButton.setBackground(new java.awt.Color(153, 107, 66));
+        updateButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        updateButton.setForeground(new java.awt.Color(255, 255, 255));
+        updateButton.setText("Actualizar");
 
-        restaurantButton1.setBackground(new java.awt.Color(153, 107, 66));
-        restaurantButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        restaurantButton1.setForeground(new java.awt.Color(255, 255, 255));
-        restaurantButton1.setText("Añadir");
+        addButton.setBackground(new java.awt.Color(153, 107, 66));
+        addButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        addButton.setForeground(new java.awt.Color(255, 255, 255));
+        addButton.setText("Añadir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -48,9 +48,9 @@ public class Options extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(70, 70, 70)
-                .addComponent(restaurantButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
-                .addComponent(restaurantButton, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77))
         );
         layout.setVerticalGroup(
@@ -58,15 +58,15 @@ public class Options extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(224, 224, 224)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(restaurantButton)
-                    .addComponent(restaurantButton1))
+                    .addComponent(updateButton)
+                    .addComponent(addButton))
                 .addContainerGap(245, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton restaurantButton;
-    private javax.swing.JButton restaurantButton1;
+    public javax.swing.JButton addButton;
+    public javax.swing.JButton updateButton;
     // End of variables declaration//GEN-END:variables
 }

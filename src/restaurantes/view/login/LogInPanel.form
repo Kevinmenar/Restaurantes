@@ -27,7 +27,7 @@
                   <Component id="TittleLabel" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                   <Component id="userLabel" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
                   <Component id="userTextField" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
-                  <Component id="jButton1" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                  <Component id="ingresarButton" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="690" max="32767" attributes="0"/>
           </Group>
@@ -50,7 +50,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="userTextField" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="ingresarButton" min="-2" pref="30" max="-2" attributes="0"/>
               <EmptySpace pref="186" max="32767" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -102,7 +102,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userTextFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="ingresarButton">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="42" green="6b" red="99" type="rgb"/>
@@ -115,6 +115,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Ingresar"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="restaurantImage">
       <Properties>

@@ -104,11 +104,11 @@ public class Restaurant extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton collaboratorsButton;
-    private javax.swing.JButton commentsButton;
-    private javax.swing.JButton foodsButton;
+    public javax.swing.JButton collaboratorsButton;
+    public javax.swing.JButton commentsButton;
+    public javax.swing.JButton foodsButton;
     private javax.swing.JLabel optionsLabel;
-    private javax.swing.JButton othersButton;
-    private javax.swing.JButton restaurantButton;
+    public javax.swing.JButton othersButton;
+    public javax.swing.JButton restaurantButton;
     // End of variables declaration//GEN-END:variables
 }

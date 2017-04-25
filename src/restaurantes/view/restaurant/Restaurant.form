@@ -72,6 +72,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Platillos"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JLabel" name="optionsLabel">
       <Properties>
@@ -101,6 +104,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Restaurantes"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="collaboratorsButton">
       <Properties>
@@ -115,6 +121,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Colaboradores"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="commentsButton">
       <Properties>
@@ -129,6 +138,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Comentarios"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JButton" name="othersButton">
       <Properties>
@@ -143,6 +155,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Otros"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

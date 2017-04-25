@@ -16,7 +16,7 @@ public class ListaPaneles extends javax.swing.JPanel {
         initComponents();
     }
     
-    public void ShowItemList(List<JPanel> paneList, JPanel container) {
+    public void ShowItemList(List<JPanel> paneList) {
 
 
         DefaultListModel model = new DefaultListModel();
@@ -41,7 +41,7 @@ public class ListaPaneles extends javax.swing.JPanel {
         });
 
 
-        container.add(scroll1);
+        this.add(scroll1);
     }
 
     

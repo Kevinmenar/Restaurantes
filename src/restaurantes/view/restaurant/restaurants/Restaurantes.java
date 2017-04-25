@@ -41,7 +41,7 @@ public class Restaurantes extends javax.swing.JPanel {
         establishmentOutputLabel = new javax.swing.JLabel();
         TittleLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        descripcionTextArea = new javax.swing.JTextArea();
         cookButton = new javax.swing.JButton();
         timeButton = new javax.swing.JButton();
         dietButton = new javax.swing.JButton();
@@ -124,12 +124,12 @@ public class Restaurantes extends javax.swing.JPanel {
         TittleLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         TittleLabel7.setText("Descrition");
 
-        jTextArea1.setBackground(new java.awt.Color(153, 107, 66));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        descripcionTextArea.setBackground(new java.awt.Color(153, 107, 66));
+        descripcionTextArea.setColumns(20);
+        descripcionTextArea.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        descripcionTextArea.setForeground(new java.awt.Color(255, 255, 255));
+        descripcionTextArea.setRows(5);
+        jScrollPane1.setViewportView(descripcionTextArea);
 
         cookButton.setBackground(new java.awt.Color(153, 107, 66));
         cookButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -242,7 +242,8 @@ public class Restaurantes extends javax.swing.JPanel {
                         .addComponent(TittleLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(329, 329, 329)
                         .addComponent(comeInButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,7 +294,8 @@ public class Restaurantes extends javax.swing.JPanel {
                         .addComponent(TittleLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(comeInButton1))
                 .addGap(7, 7, 7)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -338,24 +340,24 @@ public class Restaurantes extends javax.swing.JPanel {
     private javax.swing.JLabel TittleLabel6;
     private javax.swing.JLabel TittleLabel7;
     private javax.swing.JLabel cityLabel;
-    private javax.swing.JLabel cityOutPutLabel;
-    private javax.swing.JButton comeInButton;
-    private javax.swing.JButton comeInButton1;
-    private javax.swing.JButton cookButton;
+    public javax.swing.JLabel cityOutPutLabel;
+    public javax.swing.JButton comeInButton;
+    public javax.swing.JButton comeInButton1;
+    public javax.swing.JButton cookButton;
     private javax.swing.JLabel countryLabel;
-    private javax.swing.JLabel countryOutptLabel;
-    private javax.swing.JButton dietButton;
+    public javax.swing.JLabel countryOutptLabel;
+    public javax.swing.JTextArea descripcionTextArea;
+    public javax.swing.JButton dietButton;
     private javax.swing.JButton dietButton3;
     private javax.swing.JLabel establishmentLabel;
-    private javax.swing.JLabel establishmentOutputLabel;
-    private javax.swing.JButton foodsButton;
+    public javax.swing.JLabel establishmentOutputLabel;
+    public javax.swing.JButton foodsButton;
     private javax.swing.JButton goodForButton1;
-    private javax.swing.JButton goodForButton2;
+    public javax.swing.JButton goodForButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JLabel priceOutputLabel;
+    public javax.swing.JLabel priceOutputLabel;
     private javax.swing.JLabel restaurantLabel;
-    private javax.swing.JLabel restaurantOuputLabel;
-    private javax.swing.JButton timeButton;
+    public javax.swing.JLabel restaurantOuputLabel;
+    public javax.swing.JButton timeButton;
     // End of variables declaration//GEN-END:variables
 }

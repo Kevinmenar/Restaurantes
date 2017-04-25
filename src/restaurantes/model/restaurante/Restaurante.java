@@ -6,6 +6,7 @@ import restaurante.model.cometario.Comentario;
 public class Restaurante {
     private String nombre;
     private String rangoPrecio;
+    private String ciudad;
     private String pais;
     private String descripcion;
     private String establecimiento;
@@ -17,9 +18,10 @@ public class Restaurante {
     private ArrayList<Comentario> cometarios;
     private ArrayList<Platillo> platillos;
 
-    public Restaurante(String nombre, String rangoPrecio, String pais, String descripcion, String establecimiento, ArrayList<String> Dietas, ArrayList<Llegada> llegadas, ArrayList<String> tiposCocina, ArrayList<String> eventos, ArrayList<String> tiempoComida, ArrayList<Comentario> cometarios, ArrayList<Platillo> platillos) {
+    public Restaurante(String nombre, String rangoPrecio, String ciudad, String pais, String descripcion, String establecimiento, ArrayList<String> Dietas, ArrayList<Llegada> llegadas, ArrayList<String> tiposCocina, ArrayList<String> eventos, ArrayList<String> tiempoComida, ArrayList<Comentario> cometarios, ArrayList<Platillo> platillos) {
         this.nombre = nombre;
         this.rangoPrecio = rangoPrecio;
+        this.ciudad = ciudad;
         this.pais = pais;
         this.descripcion = descripcion;
         this.establecimiento = establecimiento;
@@ -30,6 +32,9 @@ public class Restaurante {
         this.tiempoComida = tiempoComida;
         this.cometarios = cometarios;
         this.platillos = platillos;
+    }
+
+    public Restaurante() {
     }
 
     public String getNombre() {
@@ -46,6 +51,14 @@ public class Restaurante {
 
     public void setRangoPrecio(String rangoPrecio) {
         this.rangoPrecio = rangoPrecio;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 
     public String getPais() {
@@ -130,6 +143,8 @@ public class Restaurante {
 
     @Override
     public String toString() {
-        return "Restaurante{" + "nombre=" + nombre + ", rangoPrecio=" + rangoPrecio + ", pais=" + pais + ", descripcion=" + descripcion + ", establecimiento=" + establecimiento + ", Dietas=" + Dietas + ", llegadas=" + llegadas + ", tiposCocina=" + tiposCocina + ", eventos=" + eventos + ", tiempoComida=" + tiempoComida + ", cometarios=" + cometarios + ", platillos=" + platillos + '}';
+        return "Restaurante{" + "nombre=" + nombre + ", rangoPrecio=" + rangoPrecio + ", ciudad=" + ciudad + ", pais=" + pais + ", descripcion=" + descripcion + ", establecimiento=" + establecimiento + ", Dietas=" + Dietas + ", llegadas=" + llegadas + ", tiposCocina=" + tiposCocina + ", eventos=" + eventos + ", tiempoComida=" + tiempoComida + ", cometarios=" + cometarios + ", platillos=" + platillos + '}';
     }
+
+
 }
