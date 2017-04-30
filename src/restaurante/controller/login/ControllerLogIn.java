@@ -32,7 +32,7 @@ public class ControllerLogIn implements ActionListener{
     }
     
     public void startComponets() {
-        mainView.setResizable(false);
+        //mainView.setResizable(false);
         mainView.setLayout(new BorderLayout());
         mainView.getContentPane().add(logIn);
         mainView.pack();
@@ -41,7 +41,6 @@ public class ControllerLogIn implements ActionListener{
 
     public void actionPerformed(ActionEvent e) {
         if(logIn.ingresarButton == e.getSource()) {
-            System.out.println("Event");
             boolean availableUser = true; //LLamar SP
             if (availableUser) {
                 mainView.getContentPane().removeAll();
@@ -87,12 +86,18 @@ public class ControllerLogIn implements ActionListener{
                 restaurante.establishmentOutputLabel.setText(restaurantes.get(i).getEstablecimiento());
                 restaurante.priceOutputLabel.setText(restaurantes.get(i).getRangoPrecio());
                 restaurante.descripcionTextArea.setText(restaurantes.get(i).getDescripcion());
+                
+                panelList.add(restaurante);
             }
             
             
-            /*listaPaneles.ShowItemList(paneList);
+            
             restaurante.remove(options);
-            restaurante.add()*/
+            listaPaneles.setBounds(220, 0, 680, 500);
+            listaPaneles.ShowItemList(panelList);
+            restaurante.add(listaPaneles);
+            mainView.repaint();
+            mainView.revalidate();
             
         }
         else {

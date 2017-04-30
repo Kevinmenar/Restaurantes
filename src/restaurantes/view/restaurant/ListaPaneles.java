@@ -1,47 +1,43 @@
 
 package restaurantes.view.restaurant;
 
-import java.awt.event.AdjustmentEvent;
-import java.awt.event.AdjustmentListener;
+import java.awt.BorderLayout;
 import java.util.List;
-import javax.swing.DefaultListModel;
-import javax.swing.JList;
 import javax.swing.JPanel;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
-import restaurantes.Render.PanelRenderer;
+import javax.swing.JTable;
+import restaurantes.render.PanelCellEditorRenderer;
+import restaurantes.render.PanelTableModel;
+
 public class ListaPaneles extends javax.swing.JPanel {
 
+    private JTable CompTable = null;
+    private PanelTableModel CompModel = null;
+    
     public ListaPaneles() {
         initComponents();
     }
     
     public void ShowItemList(List<JPanel> paneList) {
-
-
-        DefaultListModel model = new DefaultListModel();
-
-        for (JPanel pane:paneList) {
-
-                model.addElement(pane);
-
+        CompModel = new PanelTableModel();
+        
+        for (int i = 0; i < paneList.size(); i++) {
+            CompModel.addRow(paneList.get(i));
         }
-        final JList list = new JList(model);
-        list.setFixedCellHeight(40);
-        list.setSelectedIndex(-1);
+        
+        JTable table = new JTable(CompModel);
+        table.setRowHeight(paneList.get(0).getPreferredSize().height);
+        table.setTableHeader(null);
+        PanelCellEditorRenderer PanelCellEditorRenderer = new PanelCellEditorRenderer();
+        table.setDefaultRenderer(Object.class, PanelCellEditorRenderer);
+        table.setDefaultEditor(Object.class, PanelCellEditorRenderer);
+        
+        CompTable = table;
+        
+        JScrollPane CompTableScrollpane = new JScrollPane(CompTable, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+                JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
-        list.setCellRenderer(new PanelRenderer());
-        JScrollPane scroll1 = new JScrollPane(list);
-        final JScrollBar scrollBar = scroll1.getVerticalScrollBar();
-        scrollBar.addAdjustmentListener(new AdjustmentListener() {
-            @Override
-            public void adjustmentValueChanged(AdjustmentEvent e) {
-                System.out.println("JScrollBar's current value = " + scrollBar.getValue());
-            }
-        });
-
-
-        this.add(scroll1);
+        this.add(CompTableScrollpane, BorderLayout.CENTER);
     }
 
     
@@ -49,16 +45,7 @@ public class ListaPaneles extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
+        setLayout(new java.awt.GridLayout());
     }// </editor-fold>//GEN-END:initComponents
 
 
