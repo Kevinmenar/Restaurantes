@@ -7,7 +7,7 @@ go
 create procedure update_restaurante @Id int, @fk_pais int, @fk_ciudad int, @descripcion varchar(200), @fk_establecimiento int, @nombre varchar(30), @fk_rango_precio int
 as
 	update Restaurante
-		set FkPais = @fk_pais, FkCiudad = @fk_ciudad, Descripcion = @descripcion, FkEstablecimiento = @fk_establecimiento, Nombre = @nombre, @fk_rango_precio = @fk_rango_precio
+		set FkPais = @fk_pais, FkCiudad = @fk_ciudad, Descripcion = @descripcion, FkEstablecimiento = @fk_establecimiento, Nombre = @nombre, FkRangoPrecio = @fk_rango_precio
 		where Id = @Id;
 go
 
@@ -179,3 +179,77 @@ as
 	insert into Usuario (CorreoEletronico, Nombre, FkPais, Provincia, Sexo, NombreUsuario)
 	values (@correo, @nombre, @fk_pais, @provincia, @sexo, @nombre_usuario);
 go
+
+create procedure create_amigo @fk_usuario int, @fk_amigo int
+as
+	insert into Amigos (FkUsuario, FkAmigo, Estado)
+	values (@fk_usuario, @fk_amigo, 'Pendiente');
+go
+
+create procedure select_solicitudes @Id int
+as
+	select u.Nombre, u.NombreUsuario, u.Sexo, u.CorreoEletronico, p.Pais from Amigos a, Usuario u, Pais p
+	where p.Id = u.FkPais and a.FkUsuario = @Id and u.Id = a.FkAmigo and a.Estado = 'Pendiente'
+go
+
+create procedure update_amigo_aceptado @Id int, @fk_amigo int
+as
+	update Amigos
+		set Estado = 'Aceptado'
+		where FkUsuario = @Id and FkAmigo = @fk_amigo;
+go
+
+create procedure update_amigo_rechazado @Id int, @fk_amigo int
+as
+	update Amigos
+		set Estado = 'Rechazado'
+		where FkUsuario = @Id and FkAmigo = @fk_amigo;
+go
+
+------------------------------------------------------------------------------------
+---------------------------------Cometarios-----------------------------------------
+------------------------------------------------------------------------------------
+
+create procedure insert_cometario_restaurante @id_restaurante int, @id_usuario int, @fecha date, @comentario varchar(200), @valoracion int, @clasificacion varchar(30)
+as
+	insert into Comentarios(FkUsuario, Cometario, Valoracion, Clasificacion, Fecha) 
+	values (@id_usuario, @comentario, @valoracion, @clasificacion, @fecha);
+
+	insert into CometariosXRestaurante (FkRestaurante, FkComentarios)
+	values (@id_restaurante, IDENT_CURRENT('Comentarios'))
+go
+
+create procedure insert_comentario_platillo @id_platillo_restaurante int, @id_usuario int, @fecha date, @comentario varchar(200), @valoracion int, @clasificacion varchar(30)
+as
+	insert into Comentarios(FkUsuario, Cometario, Valoracion, Clasificacion, Fecha) 
+	values (@id_usuario, @comentario, @valoracion, @clasificacion, @fecha);
+
+	insert into CometariosXRestaurante (FkRestaurante, FkComentarios)
+	values (@id_platillo_restaurante, IDENT_CURRENT('Comentarios'))
+go
+
+
+------------------------------------------------------------------------------------
+------------------------------------Otros-------------------------------------------
+------------------------------------------------------------------------------------
+
+create procedure get_last_comments @id_restaurante int, @id_ciudad int
+as
+	select top(10) c.Cometario from Restaurante r, CometariosXRestaurante cr, Comentarios c
+	where r.Id = @id_restaurante and r.FkCiudad = @id_ciudad and cr.FkComentarios = c.Id and cr.FkRestaurante = r.Id
+	order by c.Fecha desc
+go
+
+create procedure get_restaurant_city @id_ciudad int
+as
+	select r.Descripcion, r.Nombre from Restaurante r, RangoPrecio rp, TiempoComida tc, TiempoComidaXRestaurante tcr, RestriccionDieteticaXRestaurante rdr, Restriccion rt
+	where r.FkCiudad = @id_ciudad and tcr.FkRestaurante = r.Id and tcr.FkTiempoComida = tc.Id and tc.Tiempo = 'Cena' and rdr.FkRestaurante = r.Id and rdr.FkRestriccion = rt.Id and rt.Restriccion = 'Vegetariano' and r.FkRangoPrecio = rp.Id and rp.Precio = 'Intermedio'
+go
+
+create procedure get_amigos @Id_colaborador int
+as
+	select u.Nombre, u.NombreUsuario, u.Sexo, u.Provincia, u.Sexo from Amigos a, Usuario u
+	where  a.FkUsuario = @Id_colaborador and a.FkAmigo = u.Id
+go
+
+create procedure 
