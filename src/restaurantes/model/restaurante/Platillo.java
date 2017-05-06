@@ -1,7 +1,7 @@
 package restaurantes.model.restaurante;
 
 import java.util.ArrayList;
-import restaurante.model.cometario.Comentario;
+import restaurantes.model.cometario.Comentario;
 
 public class Platillo {
     private String platillo;

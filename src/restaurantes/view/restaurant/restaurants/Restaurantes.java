@@ -27,7 +27,7 @@ public class Restaurantes extends javax.swing.JPanel {
         timeButton = new javax.swing.JButton();
         dietButton = new javax.swing.JButton();
         foodsButton = new javax.swing.JButton();
-        goodForButton2 = new javax.swing.JButton();
+        goodForButton = new javax.swing.JButton();
         comeInButton = new javax.swing.JButton();
         updateButton = new javax.swing.JButton();
 
@@ -94,75 +94,40 @@ public class Restaurantes extends javax.swing.JPanel {
         cookButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         cookButton.setForeground(new java.awt.Color(255, 255, 255));
         cookButton.setText("Cocina");
-        cookButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cookButtonActionPerformed(evt);
-            }
-        });
 
         timeButton.setBackground(new java.awt.Color(153, 107, 66));
         timeButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         timeButton.setForeground(new java.awt.Color(255, 255, 255));
         timeButton.setText("Tiempos");
-        timeButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                timeButtonActionPerformed(evt);
-            }
-        });
 
         dietButton.setBackground(new java.awt.Color(153, 107, 66));
         dietButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         dietButton.setForeground(new java.awt.Color(255, 255, 255));
         dietButton.setText("Dietas");
-        dietButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dietButtonActionPerformed(evt);
-            }
-        });
 
         foodsButton.setBackground(new java.awt.Color(153, 107, 66));
         foodsButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         foodsButton.setForeground(new java.awt.Color(255, 255, 255));
         foodsButton.setText("Platillos");
         foodsButton.setToolTipText("");
-        foodsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                foodsButtonActionPerformed(evt);
-            }
-        });
 
-        goodForButton2.setBackground(new java.awt.Color(153, 107, 66));
-        goodForButton2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        goodForButton2.setForeground(new java.awt.Color(255, 255, 255));
-        goodForButton2.setText("Bueno para...");
-        goodForButton2.setToolTipText("");
-        goodForButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                goodForButton2ActionPerformed(evt);
-            }
-        });
+        goodForButton.setBackground(new java.awt.Color(153, 107, 66));
+        goodForButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        goodForButton.setForeground(new java.awt.Color(255, 255, 255));
+        goodForButton.setText("Bueno para...");
+        goodForButton.setToolTipText("");
 
         comeInButton.setBackground(new java.awt.Color(153, 107, 66));
         comeInButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         comeInButton.setForeground(new java.awt.Color(255, 255, 255));
         comeInButton.setText("Llegada");
         comeInButton.setToolTipText("");
-        comeInButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comeInButtonActionPerformed(evt);
-            }
-        });
 
         updateButton.setBackground(new java.awt.Color(153, 107, 66));
         updateButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         updateButton.setForeground(new java.awt.Color(255, 255, 255));
         updateButton.setText("Actualizar");
         updateButton.setToolTipText("");
-        updateButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -194,7 +159,7 @@ public class Restaurantes extends javax.swing.JPanel {
                         .addGap(6, 6, 6)
                         .addComponent(establishmentOutputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(goodForButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(goodForButton, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(TittleLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6)
@@ -252,7 +217,7 @@ public class Restaurantes extends javax.swing.JPanel {
                             .addComponent(establishmentOutputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(goodForButton2)))
+                        .addComponent(goodForButton)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TittleLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -270,35 +235,6 @@ public class Restaurantes extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cookButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cookButtonActionPerformed
-
-    private void timeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_timeButtonActionPerformed
-
-    private void dietButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dietButtonActionPerformed
-        // TODO add your handling code here:
-        System.out.println("The button has clicked");
-    }//GEN-LAST:event_dietButtonActionPerformed
-
-    private void foodsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foodsButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_foodsButtonActionPerformed
-
-    private void goodForButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goodForButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_goodForButton2ActionPerformed
-
-    private void comeInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comeInButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comeInButtonActionPerformed
-
-    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_updateButtonActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel TittleLabel6;
@@ -314,7 +250,7 @@ public class Restaurantes extends javax.swing.JPanel {
     private javax.swing.JLabel establishmentLabel;
     public javax.swing.JLabel establishmentOutputLabel;
     public javax.swing.JButton foodsButton;
-    public javax.swing.JButton goodForButton2;
+    public javax.swing.JButton goodForButton;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JLabel priceOutputLabel;
     private javax.swing.JLabel restaurantLabel;

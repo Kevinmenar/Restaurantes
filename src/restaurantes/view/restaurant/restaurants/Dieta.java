@@ -85,6 +85,6 @@ public class Dieta extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton addButton;
     private javax.swing.JLabel dietLabel;
-    private javax.swing.JLabel dietOutputLabel;
+    public javax.swing.JLabel dietOutputLabel;
     // End of variables declaration//GEN-END:variables
 }

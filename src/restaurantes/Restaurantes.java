@@ -1,12 +1,12 @@
 package restaurantes;
 
-import restaurante.controller.login.ControllerLogIn;
+import restaurantes.controller.login.ControllerLogIn;
 
 public class Restaurantes {
 
    
     public static void main(String[] args) {
-        ControllerLogIn controller = new ControllerLogIn();
+        ControllerLogIn controller = ControllerLogIn.getSingletonInstance();
         controller.startComponets();
     }
     

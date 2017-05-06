@@ -1,13 +1,15 @@
-package restaurante.controller.login;
+package restaurantes.controller.login;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+import restaurantes.controller.restaurante.ControllerDisplayPanel;
 import restaurantes.model.restaurante.Restaurante;
 import restaurantes.view.login.LogInPanel;
 import restaurantes.view.login.Main;
+import restaurantes.view.restaurant.ContainerPanel;
 import restaurantes.view.restaurant.ListaPaneles;
 import restaurantes.view.restaurant.Restaurant;
 import restaurantes.view.restaurant.restaurants.Options;
@@ -16,19 +18,39 @@ import restaurantes.view.restaurant.restaurants.Restaurantes;
 public class ControllerLogIn implements ActionListener{
     private Main mainView;
     private LogInPanel logIn;
-    private Restaurant restaurante;
-    private Options options;
-    private ListaPaneles listaPaneles;
+    private ContainerPanel containerPanel;
+    private static ControllerLogIn controllerLogIn;
+    
+    
+    public static ControllerLogIn getSingletonInstance () {
+        if(controllerLogIn == null) {
+            controllerLogIn = new ControllerLogIn();
+        }
+        return controllerLogIn;
+    }
     
     public ControllerLogIn () {
         mainView = new Main();
         logIn = new LogInPanel();
-        restaurante = new Restaurant();
-        options = new Options();
-        listaPaneles = new ListaPaneles();
+        containerPanel = new ContainerPanel();
         logIn.ingresarButton.addActionListener(this);
-        restaurante.restaurantButton.addActionListener(this);
-        options.updateButton.addActionListener(this);
+        containerPanel.restaurantButton.addActionListener(this);
+    }
+
+    public Main getMainView() {
+        return mainView;
+    }
+
+    public void setMainView(Main mainView) {
+        this.mainView = mainView;
+    }
+
+    public ContainerPanel getContainerPanel() {
+        return containerPanel;
+    }
+
+    public void setContainerPanel(ContainerPanel containerPanel) {
+        this.containerPanel = containerPanel;
     }
     
     public void startComponets() {
@@ -40,20 +62,21 @@ public class ControllerLogIn implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e) {
+        ControllerDisplayPanel controllerDisplayPanel = new ControllerDisplayPanel();
         if(logIn.ingresarButton == e.getSource()) {
             boolean availableUser = true; //LLamar SP
             if (availableUser) {
                 mainView.getContentPane().removeAll();
-                mainView.getContentPane().add(restaurante);
+                mainView.getContentPane().add(containerPanel);
                 mainView.repaint();
                 mainView.revalidate();
             }
-        } else if (restaurante.restaurantButton == e.getSource()) {
-            options.setBounds(220, 0, 680, 500);
-            restaurante.add(options);
+        } else if (containerPanel.restaurantButton == e.getSource()) {
+            controllerDisplayPanel.displayOptions();
             mainView.repaint();
             mainView.revalidate();
-        } else if(options.updateButton == e.getSource()) {
+            
+        } else {/*if(options.updateButton == e.getSource()) {
             
             
             
@@ -87,6 +110,8 @@ public class ControllerLogIn implements ActionListener{
                 restaurante.priceOutputLabel.setText(restaurantes.get(i).getRangoPrecio());
                 restaurante.descripcionTextArea.setText(restaurantes.get(i).getDescripcion());
                 
+                restaurante.dietButton.addActionListener(this);
+                
                 panelList.add(restaurante);
             }
             
@@ -101,6 +126,7 @@ public class ControllerLogIn implements ActionListener{
             
         }
         else {
+            System.out.println("Diet ");*/
         }
     }
     

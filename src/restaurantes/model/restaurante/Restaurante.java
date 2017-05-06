@@ -1,9 +1,10 @@
 package restaurantes.model.restaurante;
 
 import java.util.ArrayList;
-import restaurante.model.cometario.Comentario;
+import restaurantes.model.cometario.Comentario;
 
 public class Restaurante {
+    private int Id;
     private String nombre;
     private String rangoPrecio;
     private String ciudad;
@@ -18,7 +19,8 @@ public class Restaurante {
     private ArrayList<Comentario> cometarios;
     private ArrayList<Platillo> platillos;
 
-    public Restaurante(String nombre, String rangoPrecio, String ciudad, String pais, String descripcion, String establecimiento, ArrayList<String> Dietas, ArrayList<Llegada> llegadas, ArrayList<String> tiposCocina, ArrayList<String> eventos, ArrayList<String> tiempoComida, ArrayList<Comentario> cometarios, ArrayList<Platillo> platillos) {
+    public Restaurante(int Id, String nombre, String rangoPrecio, String ciudad, String pais, String descripcion, String establecimiento, ArrayList<String> Dietas, ArrayList<Llegada> llegadas, ArrayList<String> tiposCocina, ArrayList<String> eventos, ArrayList<String> tiempoComida, ArrayList<Comentario> cometarios, ArrayList<Platillo> platillos) {
+        this.Id = Id;
         this.nombre = nombre;
         this.rangoPrecio = rangoPrecio;
         this.ciudad = ciudad;
@@ -35,6 +37,14 @@ public class Restaurante {
     }
 
     public Restaurante() {
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int Id) {
+        this.Id = Id;
     }
 
     public String getNombre() {

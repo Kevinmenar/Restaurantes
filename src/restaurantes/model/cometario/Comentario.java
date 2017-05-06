@@ -1,4 +1,4 @@
-package restaurante.model.cometario;
+package restaurantes.model.cometario;
 
 import java.sql.Date;
 import restaurantes.model.usuario.Usuario;
