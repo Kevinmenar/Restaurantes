@@ -9,12 +9,12 @@ package restaurantes.view.restaurant.restaurants;
  *
  * @author kemendez
  */
-public class Dieta extends javax.swing.JPanel {
+public class RestaurantItem extends javax.swing.JPanel {
 
     /**
-     * Creates new form Dieta
+     * Creates new form Evento
      */
-    public Dieta() {
+    public RestaurantItem() {
         initComponents();
     }
 
@@ -27,20 +27,19 @@ public class Dieta extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dietLabel = new javax.swing.JLabel();
-        dietOutputLabel = new javax.swing.JLabel();
+        itemNameLabel = new javax.swing.JLabel();
+        itemOutputLabel = new javax.swing.JLabel();
         addButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(153, 107, 66));
 
-        dietLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        dietLabel.setForeground(new java.awt.Color(255, 255, 255));
-        dietLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dietLabel.setText("Dieta");
+        itemNameLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        itemNameLabel.setForeground(new java.awt.Color(255, 255, 255));
+        itemNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        dietOutputLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        dietOutputLabel.setForeground(new java.awt.Color(255, 255, 255));
-        dietOutputLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        itemOutputLabel.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        itemOutputLabel.setForeground(new java.awt.Color(255, 255, 255));
+        itemOutputLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         addButton.setBackground(new java.awt.Color(153, 107, 66));
         addButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -57,13 +56,13 @@ public class Dieta extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(dietLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(itemNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(dietOutputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(itemOutputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -71,8 +70,8 @@ public class Dieta extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(dietOutputLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dietLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(itemOutputLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(itemNameLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -84,7 +83,7 @@ public class Dieta extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton addButton;
-    private javax.swing.JLabel dietLabel;
-    public javax.swing.JLabel dietOutputLabel;
+    public javax.swing.JLabel itemNameLabel;
+    public javax.swing.JLabel itemOutputLabel;
     // End of variables declaration//GEN-END:variables
 }

@@ -13,7 +13,6 @@ public class PanelTableModel extends DefaultTableModel {
     }
 
     public void addRow(JPanel newPanel) {
-        System.out.println("Value Added");
         super.addRow(new Object[]{newPanel});
     }
 }

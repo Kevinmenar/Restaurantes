@@ -7,14 +7,14 @@ package restaurantes.view.restaurant.restaurants;
 
 /**
  *
- * @author Curso
+ * @author kemendez
  */
-public class Options extends javax.swing.JPanel {
+public class OptionsFoodsView extends javax.swing.JPanel {
 
     /**
-     * Creates new form Options
+     * Creates new form OptionsFoodsView
      */
-    public Options() {
+    public OptionsFoodsView() {
         initComponents();
     }
 
@@ -27,20 +27,20 @@ public class Options extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        updateButton = new javax.swing.JButton();
         addButton = new javax.swing.JButton();
+        updateButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(153, 107, 66));
-
-        updateButton.setBackground(new java.awt.Color(153, 107, 66));
-        updateButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        updateButton.setForeground(new java.awt.Color(255, 255, 255));
-        updateButton.setText("Actualizar");
 
         addButton.setBackground(new java.awt.Color(153, 107, 66));
         addButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         addButton.setForeground(new java.awt.Color(255, 255, 255));
         addButton.setText("Añadir");
+
+        updateButton.setBackground(new java.awt.Color(153, 107, 66));
+        updateButton.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        updateButton.setForeground(new java.awt.Color(255, 255, 255));
+        updateButton.setText("Eliminar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

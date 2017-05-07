@@ -2,21 +2,21 @@ package restaurantes.controller.restaurante;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import restaurantes.view.restaurant.restaurants.Options;
+import restaurantes.view.restaurant.restaurants.OptionsRestaurantView;
 
 public class ControllerOptions implements ActionListener{
-    private Options options;
+    private OptionsRestaurantView options;
     
     ControllerOptions () {
-        options = new Options();
+        options = new OptionsRestaurantView();
         options.updateButton.addActionListener(this);
     }
 
-    public Options getOptions() {
+    public OptionsRestaurantView getOptions() {
         return options;
     }
 
-    public void setOptions(Options options) {
+    public void setOptions(OptionsRestaurantView options) {
         this.options = options;
     }
 

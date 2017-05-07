@@ -1,17 +1,25 @@
 package restaurantes.model.restaurante;
 
-import java.util.ArrayList;
-import restaurantes.model.cometario.Comentario;
-
 public class Platillo {
+    private int id;
     private String platillo;
     private String descripcion;
-    private ArrayList<Comentario> cometarios;
 
-    public Platillo(String platillo, String descripcion, ArrayList<Comentario> cometarios) {
+    public Platillo(int id, String platillo, String descripcion) {
+        this.id = id;
         this.platillo = platillo;
         this.descripcion = descripcion;
-        this.cometarios = cometarios;
+    }
+
+    public Platillo() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getPlatillo() {
@@ -29,20 +37,4 @@ public class Platillo {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
-    public ArrayList<Comentario> getCometarios() {
-        return cometarios;
-    }
-
-    public void setCometarios(ArrayList<Comentario> cometarios) {
-        this.cometarios = cometarios;
-    }
-
-    @Override
-    public String toString() {
-        return "Platillo{" + "platillo=" + platillo + ", descripcion=" + descripcion + ", cometarios=" + cometarios + '}';
-    }
-
-    
-    
 }

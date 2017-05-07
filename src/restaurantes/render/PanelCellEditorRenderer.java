@@ -1,6 +1,7 @@
 package restaurantes.render;
 
 import java.awt.Component;
+import java.util.ArrayList;
 import java.util.EventObject;
 import javax.swing.AbstractCellEditor;
 import javax.swing.JPanel;
@@ -12,25 +13,29 @@ import restaurantes.view.restaurant.restaurants.Restaurantes;
 public class PanelCellEditorRenderer extends AbstractCellEditor implements TableCellRenderer, TableCellEditor {
 
     private static final long serialVersionUID = 1L;
-    private JPanel renderer = new Restaurantes();
-    private JPanel editor = new Restaurantes();
+   // private ArrayList<JPanel> renderer = new ArrayList<JPanel>();
+    private JPanel editor = new JPanel();
+    private JPanel renderer = new JPanel();
+    //private int lastPosition;
+    private int currentPosition;
 
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-        //renderer.setComp((Comp) value);
-        System.out.println("Value getTableCellRendererComponent");
+        System.out.println("Renderizado");
+        renderer = (JPanel) value;
         return (JPanel) value;
     }
 
     @Override
     public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
-        //editor.setComp((Comp) value);
-        System.out.println("Value getTableCellEditorComponent");
+        System.out.println("Editor");
+        editor = (JPanel) value;
         return (JPanel) value;
     }
 
     @Override
     public Object getCellEditorValue() {
+        System.out.println("Unselected");
         return editor;
     }
 

@@ -23,6 +23,7 @@ public class ContainerPanel extends javax.swing.JPanel {
     }
     
     public void ShowItemList(List<JPanel> paneList) {
+        this.containerPanel.removeAll();
         CompModel = new PanelTableModel();
         
         for (int i = 0; i < paneList.size(); i++) {
@@ -30,6 +31,7 @@ public class ContainerPanel extends javax.swing.JPanel {
         }
         
         JTable table = new JTable(CompModel);
+        table.setColumnSelectionAllowed(false);
         table.setRowHeight(paneList.get(0).getPreferredSize().height);
         table.setTableHeader(null);
         PanelCellEditorRenderer PanelCellEditorRenderer = new PanelCellEditorRenderer();

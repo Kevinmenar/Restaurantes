@@ -139,6 +139,20 @@ as
 	where er.FkRestaurante = @id_restaurantes and er.FkEvento = e.Id
 go
 
+create procedure select_platillos @id_restaurantes int
+as
+	select p.Descripcion, p.Nombre from PlatillosXRestaurante pr, Platillos p
+	where pr.FkRestaurante = @id_restaurantes and pr.FkPlatillo = p.Id
+go
+
+create procedure unselect_platillos @id_restaurantes int
+as
+	select p.Nombre, p.Nombre from Platillos p
+	except
+	select p.Descripcion, p.Nombre from PlatillosXRestaurante pr, Platillos p
+	where pr.FkRestaurante = @id_restaurantes and pr.FkPlatillo = p.Id
+go
+
 -------------------------------------------------------------------------
 ------------------------------Platillos----------------------------------
 -------------------------------------------------------------------------
@@ -248,8 +262,6 @@ go
 
 create procedure get_amigos @Id_colaborador int
 as
-	select u.Nombre, u.NombreUsuario, u.Sexo, u.Provincia, u.Sexo from Amigos a, Usuario u
+	select u.Nombre, u.NombreUsuario, u.Sexo, u.Provincia, u.CorreoEletronico from Amigos a, Usuario u
 	where  a.FkUsuario = @Id_colaborador and a.FkAmigo = u.Id
 go
-
-create procedure 

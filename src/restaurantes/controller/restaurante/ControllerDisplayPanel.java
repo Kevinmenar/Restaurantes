@@ -3,12 +3,13 @@ package restaurantes.controller.restaurante;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 import restaurantes.controller.login.ControllerLogIn;
+import restaurantes.model.restaurante.ItemRestaurante;
+import restaurantes.model.restaurante.Platillo;
 import restaurantes.model.restaurante.Restaurante;
 import restaurantes.view.restaurant.ContainerPanel;
-import restaurantes.view.restaurant.DisplayPanel;
-import restaurantes.view.restaurant.ListaPaneles;
-import restaurantes.view.restaurant.restaurants.Dieta;
-import restaurantes.view.restaurant.restaurants.Options;
+import restaurantes.view.restaurant.restaurants.OptionsRestaurantView;
+import restaurantes.view.restaurant.restaurants.PlatilloPanel;
+import restaurantes.view.restaurant.restaurants.RestaurantItem;
 import restaurantes.view.restaurant.restaurants.Restaurantes;
 
 public class ControllerDisplayPanel {
@@ -63,24 +64,33 @@ public class ControllerDisplayPanel {
         restaurantes.add(restaurante1);
         restaurantes.add(restaurante2);
 
-        //ArrayList<ControllerRestaurantItem> restaurantItemList = new ArrayList<ControllerRestaurantItem>();
         ArrayList<JPanel> panelList = new ArrayList<JPanel>();
         for (int i =0; i<restaurantes.size(); i++) {
             Restaurantes restaurante = new Restaurantes();
-            restaurante.restaurantOuputLabel.setText(restaurantes.get(i).getNombre());
-            restaurante.cityOutPutLabel.setText(restaurantes.get(i).getCiudad());
-            restaurante.countryOutptLabel.setText(restaurantes.get(i).getPais());
-            restaurante.establishmentOutputLabel.setText(restaurantes.get(i).getEstablecimiento());
-            restaurante.priceOutputLabel.setText(restaurantes.get(i).getRangoPrecio());
+            restaurante.restaurantTextField.setText(restaurantes.get(i).getNombre());
+            restaurante.ciudadTextField.setText(restaurantes.get(i).getCiudad());
+            restaurante.paisTextField.setText(restaurantes.get(i).getPais());
+            restaurante.establecimientoTextField.setText(restaurantes.get(i).getEstablecimiento());
+            restaurante.precioTextField.setText(restaurantes.get(i).getRangoPrecio());
             restaurante.descripcionTextArea.setText(restaurantes.get(i).getDescripcion());
 
-            //restaurante.dietButton.addActionListener(this);
             ControllerRestaurantItem controllerRestaurantItem = new ControllerRestaurantItem (restaurantes.get(i), restaurante) {
                 public void diets(int id) {
-                    displayDiets(id, true);
+                    displayWindows(id, "Dieta");
+                }
+                public void cook(int id) {
+                    displayWindows(id, "Cocina");
+                }
+                public void time(int id) {
+                    displayWindows(id, "Tiempo");
+                }
+                public void goodFor(int id) {
+                    displayWindows(id, "BuenoPara");
+                }
+                public void foods(int id) {
+                    displayfoods(id, "Restaurante");
                 }
             };
-            //restaurantItemList.add(controllerRestaurantItem);
             panelList.add(controllerRestaurantItem.getRestaurantes());
         }
         
@@ -90,34 +100,66 @@ public class ControllerDisplayPanel {
         
     }
     
-    public void displayDiets(int id, boolean use) {
+    public void displayWindows(int id, String window) {
         displayPanel.containerPanel.removeAll();
-        ArrayList<String> dietas = new ArrayList<String>();
-        dietas.add("Vegetariana");
-        dietas.add("Carnivora");
+        ArrayList<ItemRestaurante> dietasAdded = new ArrayList<ItemRestaurante>();
+        ItemRestaurante item1 = new ItemRestaurante(1, "Item1");
+        ItemRestaurante item2 = new ItemRestaurante(2, "Item2");
+        dietasAdded.add(item1);
+        dietasAdded.add(item2);
         
-        //ArrayList<ControllerDieta> dietItemList = new ArrayList<ControllerDieta>();
         ArrayList<JPanel> panelList = new ArrayList<JPanel>();
-        for (int i =0; i<dietas.size(); i++) {
-            Dieta dieta = new Dieta();
-            if (use) {
-                dieta.addButton.setVisible(false);
-            }
-            dieta.dietOutputLabel.setText(dietas.get(i));
+        for (int i =0; i<dietasAdded.size(); i++) {
+            RestaurantItem dieta = new RestaurantItem();
+            dieta.itemOutputLabel.setText(dietasAdded.get(i).getNombre());
 
-            //restaurante.dietButton.addActionListener(this);
-            ControllerDieta controllerDieta = new ControllerDieta (i, dieta) {
-                public void addDieta(int id) {
-                    System.out.println("Displayed");
-                }
-            };
-            //dietItemList.add(controllerRestaurantItem);
+            ControllerDieta controllerDieta = new ControllerDieta (id, dietasAdded.get(i).getId(), dieta, true, window);
             panelList.add(controllerDieta.getDieta());
+        }
+        
+        ArrayList<ItemRestaurante> notdietasAdded = new ArrayList<ItemRestaurante>();
+        ItemRestaurante item3 = new ItemRestaurante(3, "Item3");
+        ItemRestaurante item4 = new ItemRestaurante(4, "Item4");
+        notdietasAdded.add(item3);
+        notdietasAdded.add(item4);
+        
+        for (int i =0; i<notdietasAdded.size(); i++) {
+            RestaurantItem dieta = new RestaurantItem();
+            dieta.itemOutputLabel.setText(notdietasAdded.get(i).getNombre());
+
+            ControllerDieta controllerDieta = new ControllerDieta (i, dietasAdded.get(i).getId(), dieta, false, window);
+            panelList.add(controllerDieta.getDieta());
+        }
+        
+        displayPanel.ShowItemList(panelList);
+        controller.getMainView().repaint();
+        controller.getMainView().revalidate();
+    }
+    
+    public void displayfoods(int id, String function) {
+        displayPanel.containerPanel.removeAll();
+        ArrayList<Platillo> platillos = new ArrayList<Platillo>();
+        
+        if(function == "Restaurante") {
+            Platillo platillo1 = new Platillo(1, "Sopa", "Sopa Tica");
+            Platillo platillo2 = new Platillo(2, "Sopa", "Sopa Azteca");
+            platillos.add(platillo1);
+            platillos.add(platillo2);
+        } else {
+        }
+                
+        ArrayList<JPanel> panelList = new ArrayList<JPanel>();
+        for (int i =0; i<platillos.size(); i++) {
+            PlatilloPanel platilloView = new PlatilloPanel();
+            platilloView.platilloTextField.setText(platillos.get(i).getPlatillo());
+            platilloView.descriptionTextArea.setText(platillos.get(i).getDescripcion());
+            ControllerPlatillos controllerPlatillos = new ControllerPlatillos(platilloView, platillos.get(i), function);
+            controllerPlatillos.setState(true);
+            panelList.add(controllerPlatillos.getPlatilloView());
+            
         }
         displayPanel.ShowItemList(panelList);
         controller.getMainView().repaint();
         controller.getMainView().revalidate();
     }
-        
-        
 }
