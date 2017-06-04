@@ -3,6 +3,7 @@ package restaurantes.controller.restaurante;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 import restaurantes.controller.login.ControllerLogIn;
+import restaurantes.model.cometario.Comentario;
 import restaurantes.model.restaurante.ItemRestaurante;
 import restaurantes.model.restaurante.Platillo;
 import restaurantes.model.restaurante.Restaurante;
@@ -150,7 +151,11 @@ public class ControllerDisplayPanel {
                 
         ArrayList<JPanel> panelList = new ArrayList<JPanel>();
         for (int i =0; i<platillos.size(); i++) {
-            PlatilloPanel platilloView = new PlatilloPanel();
+            PlatilloPanel platilloView = new PlatilloPanel() {
+                public void displayCommentaries() {
+        
+                }
+            };
             platilloView.platilloTextField.setText(platillos.get(i).getPlatillo());
             platilloView.descriptionTextArea.setText(platillos.get(i).getDescripcion());
             ControllerPlatillos controllerPlatillos = new ControllerPlatillos(platilloView, platillos.get(i), function);
@@ -161,5 +166,14 @@ public class ControllerDisplayPanel {
         displayPanel.ShowItemList(panelList);
         controller.getMainView().repaint();
         controller.getMainView().revalidate();
+    }
+    
+    public void displayComentarios() {
+        displayPanel.containerPanel.removeAll();
+        ArrayList<Comentario> Comentarios = new ArrayList<Comentario>();
+        
+        ArrayList<JPanel> panelList = new ArrayList<JPanel>();
+        for (int i = 0; i < Comentarios.size(); i++) {
+        }
     }
 }

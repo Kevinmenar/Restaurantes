@@ -99,7 +99,7 @@ public class ControllerPlatillos implements ActionListener {
             }
             this.state = !state;
         } else if (platilloView.createButton == e.getSource()) {
-            
+            displayCommentaries();
         } else if (platilloView.deleteButton == e.getSource()) {
         
         } else {
@@ -108,6 +108,8 @@ public class ControllerPlatillos implements ActionListener {
     }
     
     
-    
+    public void displayCommentaries() {
+        
+    }
     
 }

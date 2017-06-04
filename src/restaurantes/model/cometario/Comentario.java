@@ -4,14 +4,12 @@ import java.sql.Date;
 import restaurantes.model.usuario.Usuario;
 
 public class Comentario {
-    private Usuario colaborador;
     private int valoracion;
     private String cometario;
     private String clasificacion;
     private Date fecha;
 
-    public Comentario(Usuario colaborador, int valoracion, String cometario, String clasificacion, Date fecha) {
-        this.colaborador = colaborador;
+    public Comentario(int valoracion, String cometario, String clasificacion, Date fecha) {
         this.valoracion = valoracion;
         this.cometario = cometario;
         this.clasificacion = clasificacion;
@@ -19,14 +17,6 @@ public class Comentario {
     }
 
     public Comentario() {
-    }
-
-    public Usuario getColaborador() {
-        return colaborador;
-    }
-
-    public void setColaborador(Usuario colaborador) {
-        this.colaborador = colaborador;
     }
 
     public int getValoracion() {
@@ -63,7 +53,7 @@ public class Comentario {
 
     @Override
     public String toString() {
-        return "ComentarioRestaurante{" + "colaborador=" + colaborador + ", valoracion=" + valoracion + ", cometario=" + cometario + ", clasificacion=" + clasificacion + ", fecha=" + fecha + '}';
+        return "ComentarioRestaurante{" + ", valoracion=" + valoracion + ", cometario=" + cometario + ", clasificacion=" + clasificacion + ", fecha=" + fecha + '}';
     }
     
     
